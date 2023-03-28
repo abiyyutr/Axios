@@ -1,0 +1,29 @@
+{
+  "users": [
+    {
+      "name": "Biyyuu",
+      "email": "biyyugtg@gmail.com",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "name": "Kosasih",
+      "email": "kosasih@gmail.com"
+    },
+    {
+      "id": 3,
+      "name": "Jhon",
+      "email": "Jhon@gmail.com"
+    },
+    {
+      "id": 4,
+      "name": "Doe",
+      "email": "doe@gmail.com"
+    },
+    {
+      "name": "Biyyu ganteng",
+      "email": "biyyu@gmail.com",
+      "id": 6
+    }
+  ]
+}

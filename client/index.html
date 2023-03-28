@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contoh Halaman HTML</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <h1>Selamat Datang!</h1>
+    <button onclick="addUser()">Add User</button>
+    <button onclick="updateUser()">Update User</button>
+    <button onclick="deleteUser()">Delete User</button>
+
+    <script>
+        // const myInstance = axios.create({
+        //     baseURL: "http://localhost:3000/users",
+        // });
+        // axios
+        // .get("http://localhost:3000/users")
+        // .then(( data) => {
+        //     console.log(" ~ file: index.html ~ line 17 ~ response", data);
+        // })
+        // .catch((err) => {
+        //     console.log(" ~ file: index.html ~ line 20 ~ err", response);
+        // })
+        // .finally(() => {
+        //     console.log("request selesai");
+        // })
+        function addUser() {
+            const newUser = {
+                name: "Biyyu ganteng",
+                email: "biyyu@gmail.com",
+            };
+
+        axios
+        .post("http://localhost:3000/users", newUser)
+        .then(({ data}) => {
+            console.log(" ~ file: index.html ~ line 28 .then ~ response", data);
+        })
+        .catch((err) => {
+            console.log(" ~ file: index.html ~ line 30 add user ~ err", response);
+        })
+        .finally(() => {
+            console.log("request selesai");
+        });
+        }
+
+        function updateUser() {
+            const updateUser = {
+                name: "Biyyuu",
+                email: "biyyugtg@gmail.com",
+            };
+            const userId = 1;
+
+        //     axios
+        // .put(`http://localhost:3000/users/${userId}`, updateUser)
+        // .then(({ data}) => {
+        //     console.log(" ~ file: index.html ~ line 28 .then ~ response", data);
+        // })
+        // .catch((err) => {
+        //     console.log(" ~ file: index.html ~ line 30 update user ~ err", response);
+        // })
+        // .finally(() => {
+        //     console.log("request selesai");
+        // });
+        axios({
+            method: "PUT",
+            url: `http://localhost:3000/users/${userId}`,
+            data: updateUser,
+        })
+        .then(({ data}) => {
+            console.log(" ~ file: index.html ~ line 28 .then ~ response", data);
+        })
+        .catch((err) => {
+            console.log(" ~ file: index.html ~ line 30 update user ~ err", response);
+        })
+        .finally(() => {
+            console.log("request selesai");
+        });
+        }
+        
+        function deleteUser() {
+            const userId = 5;
+
+            axios
+        .delete(`http://localhost:3000/users/${userId}`)
+        .then(({ data}) => {
+            console.log(" ~ file: index.html ~ line 28 .then ~ response", data);
+        })
+        .catch((err) => {
+            console.log(" ~ file: index.html ~ line 30 delete user ~ err", response);
+        })
+        .finally(() => {
+            console.log("request selesai");
+        });
+        }
+    </script>
+  </body>
+</html>
